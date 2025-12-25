@@ -1,25 +1,24 @@
 'use client';
 
 import { LightningIcon, TargetIcon, RocketIcon } from './icons';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function BusinessBenefits() {
   const benefits = [
     {
       icon: LightningIcon,
-      title: 'Экономия Времени',
+      title: 'Экономия времени',
       description: 'Автоматизация обработки заказов экономит до 80% времени менеджеров',
       stat: '80%',
     },
     {
       icon: TargetIcon,
-      title: 'Увеличение Конверсии',
+      title: 'Увеличение конверсии',
       description: 'Круглосуточная доступность и мгновенные ответы повышают конверсию на 40%',
       stat: '+40%',
     },
     {
       icon: RocketIcon,
-      title: 'Рост Продаж',
+      title: 'Рост продаж',
       description: 'Автоматизация позволяет обрабатывать в 5 раз больше заказов без увеличения штата',
       stat: '5x',
     },
@@ -29,7 +28,7 @@ export default function BusinessBenefits() {
     <section className="bg-gradient-to-br from-[#6366f1] to-[#7177f8] py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-4 px-4">
-          Как Это Улучшит Ваш Бизнес
+          Как это улучшит ваш бизнес
         </h2>
         <p className="text-center text-white/90 mb-10 sm:mb-12 md:mb-16 text-lg max-w-2xl mx-auto">
           Реальные результаты от внедрения платформы AutoTriumph
@@ -42,17 +41,6 @@ export default function BusinessBenefits() {
                 key={idx}
                 className="bg-white dark:bg-[#23303c] p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden"
               >
-                {/* Анимация денег/инвестиций на первой карточке */}
-                {idx === 0 && (
-                  <div className="absolute bottom-4 right-4 w-32 h-32 opacity-20">
-                    <DotLottieReact
-                      src="/animations/Money Investment.lottie"
-                      loop
-                      autoplay
-                      style={{ width: '100%', height: '100%' }}
-                    />
-                  </div>
-                )}
                 <div className="bg-[#6366f1] dark:bg-[#7177f8] w-16 h-16 rounded-xl flex items-center justify-center mb-4 relative z-10">
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>

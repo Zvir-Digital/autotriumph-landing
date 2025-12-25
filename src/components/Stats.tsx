@@ -90,17 +90,17 @@ export default function Stats() {
   const stats = [
     {
       value: '2-3 сек',
-      label: 'Время Ответа AI',
+      label: 'Время ответа AI',
       icon: LightningIcon,
     },
     {
       value: '100%',
-      label: 'Точность Извлечения Данных',
+      label: 'Точность извлечения данных',
       icon: TargetIcon,
     },
     {
       value: '4 сек',
-      label: 'Полный Цикл Обработки',
+      label: 'Полный цикл обработки',
       icon: RocketIcon,
     },
   ];

@@ -2,6 +2,7 @@
 
 import { MessageIcon, BotIcon, RouteIcon, CheckIcon } from './icons';
 import Lottie from 'lottie-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { processAnimation } from './animations/animations';
 
 export default function HowItWorks() {
@@ -9,25 +10,25 @@ export default function HowItWorks() {
     {
       step: '01',
       icon: MessageIcon,
-      title: 'Клиент Пишет В Мессенджер',
+      title: 'Клиент пишет в мессенджер',
       description: 'WhatsApp, Telegram или Email — не важно, бот отвечает везде одинаково хорошо',
     },
     {
       step: '02',
       icon: BotIcon,
-      title: 'AI Ведет Диалог',
+      title: 'AI ведет диалог',
       description: 'Извлекает имя, телефон, дату, маршрут и количество гостей естественным образом',
     },
     {
       step: '03',
       icon: RouteIcon,
-      title: 'Автоматический Расчет',
+      title: 'Автоматический расчет',
       description: 'Система считает расстояние, подбирает автомобили и рассчитывает стоимость',
     },
     {
       step: '04',
       icon: CheckIcon,
-      title: 'Оплата И Подтверждение',
+      title: 'Оплата и подтверждение',
       description: 'Клиент оплачивает предоплату через YooKassa, заказ автоматически создается',
     },
   ];
@@ -36,8 +37,23 @@ export default function HowItWorks() {
     <section id="how-it-works" className="bg-gradient-to-br from-[#f3f4f6] to-[#e5e7eb] dark:from-[#1a2332] dark:to-[#16212b] py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#131022] dark:text-white text-center mb-10 sm:mb-12 md:mb-16 px-4">
-          Как Это Работает
+          Как это работает
         </h2>
+        
+        {/* Центральная анимация с роботом и чатом */}
+        <div className="flex justify-center mb-10 sm:mb-12 md:mb-16">
+          <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl h-[250px] sm:h-[300px] md:h-[350px]">
+            <div className="absolute inset-0 flex items-center justify-center">
+              <DotLottieReact
+                src="/animations/robot_chat.json"
+                loop
+                autoplay
+                style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '100%' }}
+              />
+            </div>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {steps.map((item, idx) => {
             const IconComponent = item.icon;

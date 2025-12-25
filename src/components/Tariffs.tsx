@@ -86,7 +86,9 @@ export default function Tariffs() {
             </ul>
             <a
               href="http://admin.your-proff-manager.ru"
-              className={`block w-full text-center font-bold py-3 px-6 rounded-xl transition-all ${
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block w-full text-center font-bold py-3 px-6 rounded-xl transition-all text-base sm:text-lg ${
                 tariff.popular
                   ? 'bg-[#6366f1] dark:bg-[#7177f8] text-white hover:bg-[#5855eb] dark:hover:bg-[#6369e6]'
                   : 'bg-[#f3f4f6] dark:bg-[#2a3a4c] text-[#131022] dark:text-white hover:bg-[#e5e7eb] dark:hover:bg-[#3a4a5c]'

@@ -1,12 +1,90 @@
+'use client';
+
+import { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
+const sections = [
+  { id: 'base-url', title: 'Базовый URL' },
+  { id: 'authentication', title: 'Авторизация' },
+  { id: 'bots', title: 'Управление Ботами' },
+  { id: 'dialogs', title: 'Управление Диалогами' },
+  { id: 'clients', title: 'Управление Клиентами' },
+  { id: 'vehicles', title: 'Управление Автомобилями' },
+  { id: 'widget', title: 'Widget API' },
+  { id: 'websocket', title: 'WebSocket' },
+  { id: 'response-format', title: 'Формат Ответа' },
+  { id: 'status-codes', title: 'HTTP Коды Ответов' },
+];
+
 export default function DocsPage() {
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY + 200;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sections[i].id);
+        if (element && element.offsetTop <= scrollPosition) {
+          setActiveSection(sections[i].id);
+          break;
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <main className="min-h-screen bg-white dark:bg-[#16212b] transition-colors">
       <Header />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-        <div className="max-w-4xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
+          {/* Навигационное меню */}
+          <aside className="lg:w-64 lg:flex-shrink-0">
+            <div className="lg:sticky lg:top-24">
+              <nav className="bg-white dark:bg-[#23303c] rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c] p-4 shadow-sm">
+                <h3 className="text-sm font-bold text-[#131022] dark:text-white mb-4 uppercase tracking-wide">
+                  Содержание
+                </h3>
+                <ul className="space-y-2">
+                  {sections.map((section) => (
+                    <li key={section.id}>
+                      <a
+                        href={`#${section.id}`}
+                        className={`block text-sm py-2 px-3 rounded-lg transition-colors ${
+                          activeSection === section.id
+                            ? 'bg-[#6366f1] dark:bg-[#7177f8] text-white font-medium'
+                            : 'text-[#585c7b] dark:text-[#a0a0a0] hover:bg-[#f3f4f6] dark:hover:bg-[#2a3a4c] hover:text-[#6366f1] dark:hover:text-[#7177f8]'
+                        }`}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          const element = document.getElementById(section.id);
+                          if (element) {
+                            const headerOffset = 100;
+                            const elementPosition = element.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            window.scrollTo({
+                              top: offsetPosition,
+                              behavior: 'smooth',
+                            });
+                          }
+                        }}
+                      >
+                        {section.title}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          </aside>
+
+          {/* Основной контент */}
+          <div className="flex-1 max-w-4xl">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#131022] dark:text-white mb-4 animate-fade-in-up">
             API Документация
           </h1>
@@ -15,7 +93,7 @@ export default function DocsPage() {
           </p>
 
           {/* Base URL */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
+          <section id="base-url" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.2s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Базовый URL</h2>
             <div className="bg-[#f3f4f6] dark:bg-[#23303c] p-4 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
               <code className="text-[#6366f1] dark:text-[#7177f8] font-mono">
@@ -25,7 +103,7 @@ export default function DocsPage() {
           </section>
 
           {/* Authentication */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.3s', opacity: 0 }}>
+          <section id="authentication" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.3s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Авторизация</h2>
             <p className="text-[#585c7b] dark:text-[#a0a0a0] mb-4">
               Большинство endpoints требуют авторизации через JWT токен. Получите токен через эндпоинт авторизации.
@@ -89,7 +167,7 @@ export default function DocsPage() {
           </section>
 
           {/* Bots API */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s', opacity: 0 }}>
+          <section id="bots" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.4s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Ботами</h2>
             
             <div className="space-y-4">
@@ -134,7 +212,7 @@ export default function DocsPage() {
           </section>
 
           {/* Dialogs API */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.5s', opacity: 0 }}>
+          <section id="dialogs" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.5s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Диалогами</h2>
             
             <div className="space-y-4">
@@ -180,7 +258,7 @@ export default function DocsPage() {
           </section>
 
           {/* Clients API */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.6s', opacity: 0 }}>
+          <section id="clients" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.6s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Клиентами</h2>
             
             <div className="space-y-4">
@@ -203,7 +281,7 @@ export default function DocsPage() {
           </section>
 
           {/* Vehicles API */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.7s', opacity: 0 }}>
+          <section id="vehicles" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.7s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Автомобилями</h2>
             
             <div className="space-y-4">
@@ -237,7 +315,7 @@ export default function DocsPage() {
           </section>
 
           {/* Widget API */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.8s', opacity: 0 }}>
+          <section id="widget" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.8s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Widget API (Публичный)</h2>
             <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-4">
               Эти endpoints доступны без авторизации для интеграции виджета на сайт
@@ -272,7 +350,7 @@ export default function DocsPage() {
           </section>
 
           {/* WebSocket */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '0.9s', opacity: 0 }}>
+          <section id="websocket" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.9s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">WebSocket</h2>
             <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-4">
@@ -287,7 +365,7 @@ export default function DocsPage() {
           </section>
 
           {/* Response Format */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '1s', opacity: 0 }}>
+          <section id="response-format" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '1s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Формат Ответа</h2>
             <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-4">
@@ -316,7 +394,7 @@ export default function DocsPage() {
           </section>
 
           {/* Status Codes */}
-          <section className="mb-12 animate-fade-in-up" style={{ animationDelay: '1.1s', opacity: 0 }}>
+          <section id="status-codes" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '1.1s', opacity: 0 }}>
             <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">HTTP Коды Ответов</h2>
             <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
               <div className="space-y-2">
@@ -357,12 +435,15 @@ export default function DocsPage() {
               </p>
               <a
                 href="http://admin.your-proff-manager.ru"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-white dark:bg-[#23303c] text-[#131022] dark:text-white font-bold py-3 px-8 rounded-xl hover:bg-gray-100 dark:hover:bg-[#2a3a4c] transition-all shadow-lg hover:shadow-xl"
               >
                 Перейти в админ-панель
               </a>
             </div>
           </section>
+          </div>
         </div>
       </div>
       <Footer />

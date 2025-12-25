@@ -13,9 +13,9 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-4">Возможности</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#features" className="hover:text-white transition-colors">AI Диалоги</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Множество Каналов</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Интеграция Платежей</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">AI диалоги</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Множество каналов</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Интеграция платежей</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Аналитика</a></li>
             </ul>
           </div>
@@ -23,13 +23,18 @@ export default function Footer() {
             <h4 className="font-bold mb-4">Контакты</h4>
             <ul className="space-y-2 text-sm text-white/70">
               <li>
-                <a href="http://admin.your-proff-manager.ru" className="hover:text-white transition-colors">
-                  Админ Панель
+                <a 
+                  href="http://admin.your-proff-manager.ru" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white transition-colors"
+                >
+                  Админ панель
                 </a>
               </li>
               <li>
                 <a href="/docs" className="hover:text-white transition-colors">
-                  API Документация
+                  API документация
                 </a>
               </li>
               <li>
@@ -41,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/60">
-          <p>© 2025 AutoTriumph. Все Права Защищены.</p>
+          <p>© 2025 AutoTriumph. Все права защищены.</p>
         </div>
       </div>
     </footer>
