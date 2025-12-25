@@ -12,7 +12,7 @@ export default function CTA() {
           href="http://admin.your-proff-manager.ru"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white dark:bg-[#23303c] text-[#131022] dark:text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:bg-gray-100 dark:hover:bg-[#2a3a4c] transition-all text-base sm:text-lg shadow-lg hover:shadow-xl"
+          className="inline-block bg-[#23303c] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:bg-[#2a3a4c] transition-all text-base sm:text-lg shadow-lg hover:shadow-xl"
         >
           Связаться с нами
         </a>

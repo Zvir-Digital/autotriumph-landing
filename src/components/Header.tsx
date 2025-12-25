@@ -62,7 +62,7 @@ export default function Header() {
   return (
     <>
       <header 
-        className={`sticky top-0 z-50 bg-white dark:bg-[#16212b] border-b-2 border-[#e2e5f1] dark:border-[#3a4a5c] shadow-sm transition-transform duration-300 ${
+        className={`sticky top-0 z-50 bg-[#16212b] border-b-2 border-[#3a4a5c] shadow-sm transition-transform duration-300 ${
           isScrolled ? '-translate-y-full' : 'translate-y-0'
         }`}
       >
@@ -138,7 +138,7 @@ export default function Header() {
         />
         
         {/* Drawer */}
-        <div className={`sm:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] z-[70] bg-white dark:bg-[#16212b] shadow-2xl transform transition-transform duration-300 ease-in-out ${
+        <div className={`sm:hidden fixed top-0 right-0 h-full w-80 max-w-[85vw] z-[70] bg-[#16212b] shadow-2xl transform transition-transform duration-300 ease-in-out ${
           isMenuAnimating ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="flex flex-col h-full pt-6 px-6 pb-6">

@@ -39,7 +39,7 @@ export default function BusinessBenefits() {
             return (
               <div
                 key={idx}
-                className="bg-white dark:bg-[#23303c] p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden"
+                className="bg-[#23303c] p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden"
               >
                 <div className="bg-[#6366f1] dark:bg-[#7177f8] w-16 h-16 rounded-xl flex items-center justify-center mb-4 relative z-10">
                   <IconComponent className="w-8 h-8 text-white" />

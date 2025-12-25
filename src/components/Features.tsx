@@ -82,7 +82,7 @@ export default function Features() {
           return (
             <div
               key={idx}
-              className="bg-white dark:bg-[#23303c] p-6 sm:p-8 rounded-2xl border border-[#e2e5f1] dark:border-[#3a4a5c] hover:border-[#6366f1] dark:hover:border-[#7177f8] hover:shadow-xl transition-all group relative overflow-hidden"
+              className="bg-[#23303c] p-6 sm:p-8 rounded-2xl border border-[#3a4a5c] hover:border-[#7177f8] hover:shadow-xl transition-all group relative overflow-hidden"
             >
               {/* Фоновая анимация */}
               <div className="absolute top-4 right-4 w-16 h-16 opacity-20">

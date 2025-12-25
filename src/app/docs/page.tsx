@@ -39,15 +39,15 @@ export default function DocsPage() {
   }, []);
 
   return (
-    <main className="min-h-screen bg-white dark:bg-[#16212b] transition-colors">
+    <main className="min-h-screen bg-[#16212b] transition-colors">
       <Header />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-12">
           {/* Навигационное меню */}
           <aside className="lg:w-64 lg:flex-shrink-0">
             <div className="lg:sticky lg:top-24">
-              <nav className="bg-white dark:bg-[#23303c] rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c] p-4 shadow-sm">
-                <h3 className="text-sm font-bold text-[#131022] dark:text-white mb-4 uppercase tracking-wide">
+              <nav className="bg-[#23303c] rounded-xl border border-[#3a4a5c] p-4 shadow-sm">
+                <h3 className="text-sm font-bold text-white mb-4 uppercase tracking-wide">
                   Содержание
                 </h3>
                 <ul className="space-y-2">
@@ -85,7 +85,7 @@ export default function DocsPage() {
 
           {/* Основной контент */}
           <div className="flex-1 max-w-4xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-[#131022] dark:text-white mb-4 animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4 animate-fade-in-up">
             API Документация
           </h1>
           <p className="text-lg text-[#585c7b] dark:text-[#a0a0a0] mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s', opacity: 0 }}>
@@ -94,8 +94,8 @@ export default function DocsPage() {
 
           {/* Base URL */}
           <section id="base-url" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.2s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Базовый URL</h2>
-            <div className="bg-[#f3f4f6] dark:bg-[#23303c] p-4 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
+            <h2 className="text-2xl font-bold text-white mb-4">Базовый URL</h2>
+            <div className="bg-[#23303c] p-4 rounded-xl border border-[#3a4a5c]">
               <code className="text-[#6366f1] dark:text-[#7177f8] font-mono">
                 http://api.your-proff-manager.ru
               </code>
@@ -104,15 +104,15 @@ export default function DocsPage() {
 
           {/* Authentication */}
           <section id="authentication" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.3s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Авторизация</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Авторизация</h2>
             <p className="text-[#585c7b] dark:text-[#a0a0a0] mb-4">
               Большинство endpoints требуют авторизации через JWT токен. Получите токен через эндпоинт авторизации.
             </p>
-            <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-              <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/auth/login</h3>
+            <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+              <h3 className="text-lg font-bold text-white mb-2">POST /admin/auth/login</h3>
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-3">Авторизация администратора</p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mb-3">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   {`{
   "login": "admin",
   "password": "password"
@@ -121,7 +121,7 @@ export default function DocsPage() {
               </div>
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Ответ:</p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   {`{
   "token": "jwt_token_here",
   "admin": { "id": 1, "login": "admin" }
@@ -130,10 +130,10 @@ export default function DocsPage() {
               </div>
             </div>
             <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c] mt-4">
-              <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/auth/users/register</h3>
+              <h3 className="text-lg font-bold text-white mb-2">POST /admin/auth/users/register</h3>
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-3">Регистрация нового пользователя</p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   {`{
   "email": "user@example.com",
   "password": "password123",
@@ -145,10 +145,10 @@ export default function DocsPage() {
               </div>
             </div>
             <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c] mt-4">
-              <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/auth/users/login</h3>
+              <h3 className="text-lg font-bold text-white mb-2">POST /admin/auth/users/login</h3>
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-3">Авторизация пользователя</p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   {`{
   "email": "user@example.com",
   "password": "password123"
@@ -168,20 +168,20 @@ export default function DocsPage() {
 
           {/* Bots API */}
           <section id="bots" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.4s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Ботами</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Управление Ботами</h2>
             
             <div className="space-y-4">
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/bots</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/bots</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Получить список ботов</p>
                 <p className="text-xs text-[#585c7b] dark:text-[#a0a0a0]">Query параметры: search, status, limit, offset, orderBy, orderDirection</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/bots</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">POST /admin/bots</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Создать нового бота</p>
                 <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mt-2">
-                  <code className="text-sm text-[#131022] dark:text-white">
+                  <code className="text-sm text-white">
                     {`{
   "name": "Мой бот",
   "status": "active",
@@ -194,18 +194,18 @@ export default function DocsPage() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/bots/:botId</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/bots/:botId</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Получить информацию о боте</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">PUT /admin/bots/:botId</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">PUT /admin/bots/:botId</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Обновить настройки бота</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">DELETE /admin/bots/:botId</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">DELETE /admin/bots/:botId</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Удалить бота</p>
               </div>
             </div>
@@ -213,20 +213,20 @@ export default function DocsPage() {
 
           {/* Dialogs API */}
           <section id="dialogs" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.5s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Диалогами</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Управление Диалогами</h2>
             
             <div className="space-y-4">
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/dialogs</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/dialogs</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Получить список диалогов</p>
                 <p className="text-xs text-[#585c7b] dark:text-[#a0a0a0]">Query параметры: botId, status, externalClientId, limit, offset</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/dialogs</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">POST /admin/dialogs</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Создать новый диалог</p>
                 <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mt-2">
-                  <code className="text-sm text-[#131022] dark:text-white">
+                  <code className="text-sm text-white">
                     {`{
   "botId": 1,
   "externalClientId": "user123",
@@ -237,16 +237,16 @@ export default function DocsPage() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/dialogs/:dialogId/messages</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/dialogs/:dialogId/messages</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Получить сообщения диалога</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/dialogs/:dialogId/messages</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">POST /admin/dialogs/:dialogId/messages</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Отправить сообщение в диалог</p>
                 <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mt-2">
-                  <code className="text-sm text-[#131022] dark:text-white">
+                  <code className="text-sm text-white">
                     {`{
   "body": "Привет!",
   "attachments": []
@@ -259,22 +259,22 @@ export default function DocsPage() {
 
           {/* Clients API */}
           <section id="clients" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.6s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Клиентами</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Управление Клиентами</h2>
             
             <div className="space-y-4">
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/clients</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/clients</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Получить список клиентов</p>
                 <p className="text-xs text-[#585c7b] dark:text-[#a0a0a0]">Query параметры: search, status, vip, sortBy, sortOrder, limit, offset</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/clients/:id</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/clients/:id</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Получить информацию о клиенте</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">PUT /admin/clients/:id</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">PUT /admin/clients/:id</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Обновить данные клиента</p>
               </div>
             </div>
@@ -282,19 +282,19 @@ export default function DocsPage() {
 
           {/* Vehicles API */}
           <section id="vehicles" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.7s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Управление Автомобилями</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Управление Автомобилями</h2>
             
             <div className="space-y-4">
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /admin/vehicles</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /admin/vehicles</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Получить список автомобилей</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /admin/vehicles</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">POST /admin/vehicles</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Добавить новый автомобиль</p>
                 <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mt-2">
-                  <code className="text-sm text-[#131022] dark:text-white">
+                  <code className="text-sm text-white">
                     {`{
   "brand": "Mercedes-Benz",
   "seats": 4,
@@ -307,8 +307,8 @@ export default function DocsPage() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">PUT /admin/vehicles/:id</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">PUT /admin/vehicles/:id</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Обновить данные автомобиля</p>
               </div>
             </div>
@@ -316,22 +316,22 @@ export default function DocsPage() {
 
           {/* Widget API */}
           <section id="widget" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.8s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Widget API (Публичный)</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Widget API (Публичный)</h2>
             <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-4">
               Эти endpoints доступны без авторизации для интеграции виджета на сайт
             </p>
             
             <div className="space-y-4">
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /api/widget/init?botId=&#123;botId&#125;</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /api/widget/init?botId=&#123;botId&#125;</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Получить конфигурацию виджета</p>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">POST /api/widget/message</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">POST /api/widget/message</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-2">Отправить сообщение от пользователя</p>
                 <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mt-2">
-                  <code className="text-sm text-[#131022] dark:text-white">
+                  <code className="text-sm text-white">
                     {`{
   "botId": 1,
   "clientId": "visitor123",
@@ -342,8 +342,8 @@ export default function DocsPage() {
                 </div>
               </div>
 
-              <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
-                <h3 className="text-lg font-bold text-[#131022] dark:text-white mb-2">GET /api/widget/dialogs?externalClientId=&#123;visitorId&#125;</h3>
+              <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
+                <h3 className="text-lg font-bold text-white mb-2">GET /api/widget/dialogs?externalClientId=&#123;visitorId&#125;</h3>
                 <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">Получить существующий диалог</p>
               </div>
             </div>
@@ -351,13 +351,13 @@ export default function DocsPage() {
 
           {/* WebSocket */}
           <section id="websocket" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '0.9s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">WebSocket</h2>
-            <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
+            <h2 className="text-2xl font-bold text-white mb-4">WebSocket</h2>
+            <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-4">
                 Платформа поддерживает WebSocket для получения обновлений в реальном времени о новых сообщениях и изменениях в диалогах.
               </p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   ws://api.your-proff-manager.ru/ws
                 </code>
               </div>
@@ -366,13 +366,13 @@ export default function DocsPage() {
 
           {/* Response Format */}
           <section id="response-format" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '1s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">Формат Ответа</h2>
-            <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
+            <h2 className="text-2xl font-bold text-white mb-4">Формат Ответа</h2>
+            <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
               <p className="text-sm text-[#585c7b] dark:text-[#a0a0a0] mb-4">
                 Все успешные ответы возвращаются в формате:
               </p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded mb-4">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   {`{
   "success": true,
   "data": { ... }
@@ -383,7 +383,7 @@ export default function DocsPage() {
                 Ошибки возвращаются в формате:
               </p>
               <div className="bg-[#f3f4f6] dark:bg-[#1a2332] p-3 rounded">
-                <code className="text-sm text-[#131022] dark:text-white">
+                <code className="text-sm text-white">
                   {`{
   "success": false,
   "error": "Error message"
@@ -395,8 +395,8 @@ export default function DocsPage() {
 
           {/* Status Codes */}
           <section id="status-codes" className="mb-12 animate-fade-in-up scroll-mt-24" style={{ animationDelay: '1.1s', opacity: 0 }}>
-            <h2 className="text-2xl font-bold text-[#131022] dark:text-white mb-4">HTTP Коды Ответов</h2>
-            <div className="bg-white dark:bg-[#23303c] p-6 rounded-xl border border-[#e2e5f1] dark:border-[#3a4a5c]">
+            <h2 className="text-2xl font-bold text-white mb-4">HTTP Коды Ответов</h2>
+            <div className="bg-[#23303c] p-6 rounded-xl border border-[#3a4a5c]">
               <div className="space-y-2">
                 <div className="flex items-center gap-3">
                   <span className="bg-green-100 dark:bg-green-900/20 text-green-800 dark:text-green-300 px-3 py-1 rounded font-mono text-sm">200</span>
@@ -437,7 +437,7 @@ export default function DocsPage() {
                 href="http://admin.your-proff-manager.ru"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-white dark:bg-[#23303c] text-[#131022] dark:text-white font-bold py-3 px-8 rounded-xl hover:bg-gray-100 dark:hover:bg-[#2a3a4c] transition-all shadow-lg hover:shadow-xl"
+                className="inline-block bg-[#23303c] text-white font-bold py-3 px-8 rounded-xl hover:bg-[#2a3a4c] transition-all shadow-lg hover:shadow-xl"
               >
                 Перейти в админ-панель
               </a>

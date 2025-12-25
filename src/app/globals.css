@@ -15,13 +15,54 @@
 
 html {
   scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+/* Принудительно применяем темную тему для всех элементов */
+html.dark,
+html.dark body,
+html.dark * {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--text);
+  background: var(--background) !important;
+  color: var(--text) !important;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Принудительно применяем темную тему ко всем элементам */
+html.dark * {
+  color-scheme: dark;
+}
+
+/* Переопределяем белые фоны на темные */
+html.dark .bg-white {
+  background-color: var(--card-bg) !important;
+}
+
+html.dark .bg-white\/50,
+html.dark .bg-white\/20 {
+  background-color: rgba(35, 48, 60, 0.5) !important;
+}
+
+/* Переопределяем светлые тексты на темные */
+html.dark .text-\[#131022\] {
+  color: var(--text) !important;
+}
+
+html.dark .text-\[#585c7b\] {
+  color: var(--text-secondary) !important;
+}
+
+/* Переопределяем светлые границы на темные */
+html.dark .border-\[#e2e5f1\] {
+  border-color: var(--border) !important;
 }
 
 /* Максимальная ширина контейнера */

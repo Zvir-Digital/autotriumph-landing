@@ -22,13 +22,13 @@ export default function Hero() {
               href="http://admin.your-proff-manager.ru"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#6366f1] dark:bg-[#7177f8] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:bg-[#5855eb] dark:hover:bg-[#6369e6] transition-all text-base sm:text-lg w-full sm:w-auto shadow-lg hover:shadow-xl text-center"
+              className="bg-[#7177f8] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl hover:bg-[#6369e6] transition-all text-base sm:text-lg w-full sm:w-auto shadow-lg hover:shadow-xl text-center"
             >
               Начать бесплатно
             </a>
             <a
               href="#features"
-              className="bg-white dark:bg-[#23303c] text-[#131022] dark:text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl border-2 border-[#e2e5f1] dark:border-[#3a4a5c] hover:border-[#6366f1] dark:hover:border-[#7177f8] transition-all text-base sm:text-lg w-full sm:w-auto text-center"
+              className="bg-[#23303c] text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl border-2 border-[#3a4a5c] hover:border-[#7177f8] transition-all text-base sm:text-lg w-full sm:w-auto text-center"
             >
               Узнать больше
             </a>

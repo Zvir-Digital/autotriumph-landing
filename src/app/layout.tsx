@@ -13,6 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru" className="dark">
+      <head>
+        <script src="https://admin.your-proff-manager.ru/widget.js?botId=2"></script>
+      </head>
       <body className="antialiased">
         {children}
       </body>

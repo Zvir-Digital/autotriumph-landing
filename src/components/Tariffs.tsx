@@ -59,10 +59,10 @@ export default function Tariffs() {
         {tariffs.map((tariff, idx) => (
           <div
             key={idx}
-            className={`bg-white dark:bg-[#23303c] p-6 sm:p-8 rounded-2xl border-2 ${
+            className={`bg-[#23303c] p-6 sm:p-8 rounded-2xl border-2 ${
               tariff.popular
-                ? 'border-[#6366f1] dark:border-[#7177f8] shadow-xl scale-105'
-                : 'border-[#e2e5f1] dark:border-[#3a4a5c]'
+                ? 'border-[#7177f8] shadow-xl scale-105'
+                : 'border-[#3a4a5c]'
             } hover:shadow-xl transition-all`}
           >
             {tariff.popular && (

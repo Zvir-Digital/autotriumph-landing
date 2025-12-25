@@ -60,7 +60,7 @@ export default function HowItWorks() {
             return (
               <div
                 key={idx}
-                className="bg-white dark:bg-[#23303c] p-6 sm:p-8 rounded-2xl border border-[#e2e5f1] dark:border-[#3a4a5c] hover:shadow-xl transition-all relative overflow-hidden"
+                className="bg-[#23303c] p-6 sm:p-8 rounded-2xl border border-[#3a4a5c] hover:shadow-xl transition-all relative overflow-hidden"
               >
                 {/* Анимация процесса */}
                 {idx < steps.length - 1 && (
