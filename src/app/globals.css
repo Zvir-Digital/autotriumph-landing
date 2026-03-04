@@ -129,3 +129,229 @@ html.dark .border-\[#e2e5f1\] {
   opacity: 0;
   transform: translateX(20px);
 }
+
+/* Float animation for decorative elements */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Pulse glow */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(113, 119, 248, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(113, 119, 248, 0.5); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Gradient shift */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* Stagger children animation */
+@keyframes stagger-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3D tilt on scroll - perspective */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Clip-path shapes for non-standard blocks */
+.shape-blob {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.shape-blob-inverse {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}
+
+.shape-angle-right {
+  clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+.shape-angle-left {
+  clip-path: polygon(0 5%, 100% 0, 100% 95%, 0 100%);
+}
+
+/* Skewed card - unusual */
+.skew-card {
+  transform: skewY(-1deg);
+}
+
+.skew-card > * {
+  transform: skewY(1deg);
+}
+
+/* Bento-style aspect ratios */
+.bento-tall {
+  grid-row: span 2;
+}
+
+.bento-wide {
+  grid-column: span 2;
+}
+
+/* Marquee scroll */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Infinite marquee - 3 copies, translate by 1/3 for seamless loop */
+@keyframes marquee-infinite {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.animate-marquee-infinite {
+  animation: marquee-infinite 40s linear infinite;
+}
+
+/* Morph / scale on hover - dramatic */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Reveal from side */
+@keyframes reveal-left {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-reveal-left {
+  animation: reveal-left 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Glitch-style subtle */
+@keyframes glitch-subtle {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(2px, -2px); }
+  60% { transform: translate(-2px, -2px); }
+  80% { transform: translate(2px, 2px); }
+}
+
+/* Scroll reveal - elements start hidden, animate in when visible */
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes attentionPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(113, 119, 248, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(113, 119, 248, 0);
+  }
+}
+
+@keyframes subtleBlink {
+  0%, 90%, 100% { opacity: 1; }
+  95% { opacity: 0.85; }
+}
+
+/* More noticeable attention blink - draws eye to CTAs */
+@keyframes attentionBlink {
+  0%, 85%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(113, 119, 248, 0.5);
+  }
+  90% {
+    opacity: 0.95;
+    box-shadow: 0 0 20px 4px rgba(113, 119, 248, 0.4);
+  }
+}
+
+.animate-reveal-up {
+  animation: revealUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-reveal-scale {
+  animation: revealScale 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-attention-pulse {
+  animation: attentionPulse 2s ease-in-out infinite;
+}
+
+.animate-subtle-blink {
+  animation: subtleBlink 3s ease-in-out infinite;
+}
+
+.animate-attention-blink {
+  animation: attentionBlink 2.5s ease-in-out infinite;
+}
+
+/* Stagger delay utilities */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }

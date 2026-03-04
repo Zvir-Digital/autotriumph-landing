@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AutoTriumph Landing",
-  description: "AutoTriumph Landing Page",
+  title: "Аметаверс — операционная платформа для бизнеса",
+  description: "Аметаверс — единый пульт управления бизнесом. Автоматизация продаж, техподдержка, маркетплейсы, чат-боты и AI. Для ИП, самозанятых и менеджеров.",
 };
 
 export default function RootLayout({

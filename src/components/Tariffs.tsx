@@ -1,4 +1,7 @@
+'use client';
+
 import { CheckIcon } from './icons';
+import ScrollReveal from './ScrollReveal';
 
 export default function Tariffs() {
   const tariffs = [
@@ -6,98 +9,82 @@ export default function Tariffs() {
       name: 'Старт',
       price: 'Бесплатно',
       period: 'навсегда',
-      description: 'Для тестирования платформы',
-      features: [
-        'До 100 сообщений в месяц',
-        '1 канал связи',
-        'Базовые функции AI',
-        'Техническая поддержка',
-      ],
+      description: 'Для знакомства с платформой',
+      features: ['Ограниченное количество сообщений', '1–2 канала связи', 'Базовые функции AI и ботов', 'Техническая поддержка'],
       popular: false,
     },
     {
       name: 'Бизнес',
-      price: '9 990₽',
-      period: 'в месяц',
+      price: 'По запросу',
+      period: '',
       description: 'Для малого и среднего бизнеса',
-      features: [
-        'Неограниченное количество сообщений',
-        'Все каналы связи',
-        'Полный функционал AI',
-        'Приоритетная поддержка',
-        'Аналитика и отчеты',
-        'Интеграция платежей',
-      ],
+      features: ['Неограниченные сообщения', 'Все каналы и интеграции', 'Полный функционал AI и ботов', 'Продажи, договоры, эквайринг', 'Маркетплейсы и реклама', 'Приоритетная поддержка'],
       popular: true,
     },
     {
-      name: 'Профессионал',
-      price: '19 990₽',
-      period: 'в месяц',
-      description: 'Для крупных компаний',
-      features: [
-        'Все из тарифа Бизнес',
-        'Персональный менеджер',
-        'Кастомные интеграции',
-        'Обучение команды',
-        'SLA 99.9%',
-        'Доступ к API',
-      ],
+      name: 'Мультибизнес',
+      price: 'По запросу',
+      period: '',
+      description: 'Для нескольких проектов',
+      features: ['Всё из тарифа Бизнес', 'Несколько бизнесов в одном окне', 'Раздельные данные и отчётность', 'Персональный менеджер', 'Кастомные интеграции'],
       popular: false,
     },
   ];
 
   return (
-    <section id="tariffs" className="container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#131022] dark:text-white text-center mb-4 px-4">
-        Тарифы
-      </h2>
-      <p className="text-center text-[#585c7b] dark:text-[#a0a0a0] mb-10 sm:mb-12 md:mb-16 text-lg">
-        Выберите подходящий тариф для вашего бизнеса
-      </p>
-      <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
-        {tariffs.map((tariff, idx) => (
-          <div
-            key={idx}
-            className={`bg-[#23303c] p-6 sm:p-8 rounded-2xl border-2 ${
-              tariff.popular
-                ? 'border-[#7177f8] shadow-xl scale-105'
-                : 'border-[#3a4a5c]'
-            } hover:shadow-xl transition-all`}
-          >
-            {tariff.popular && (
-              <div className="bg-[#6366f1] dark:bg-[#7177f8] text-white text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">
-                Популярный
-              </div>
-            )}
-            <h3 className="text-2xl font-bold text-[#131022] dark:text-white mb-2">{tariff.name}</h3>
-            <p className="text-[#585c7b] dark:text-[#a0a0a0] mb-4 text-sm">{tariff.description}</p>
-            <div className="mb-6">
-              <span className="text-4xl font-bold text-[#131022] dark:text-white">{tariff.price}</span>
-              <span className="text-[#585c7b] dark:text-[#a0a0a0] ml-2">{tariff.period}</span>
-            </div>
-            <ul className="space-y-3 mb-6">
-              {tariff.features.map((feature, fIdx) => (
-                <li key={fIdx} className="flex items-start gap-2">
-                  <CheckIcon className="w-5 h-5 text-[#6366f1] dark:text-[#7177f8] shrink-0 mt-0.5" />
-                  <span className="text-sm text-[#585c7b] dark:text-[#a0a0a0]">{feature}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href="http://admin.your-proff-manager.ru"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`block w-full text-center font-bold py-3 px-6 rounded-xl transition-all text-base sm:text-lg ${
-                tariff.popular
-                  ? 'bg-[#6366f1] dark:bg-[#7177f8] text-white hover:bg-[#5855eb] dark:hover:bg-[#6369e6]'
-                  : 'bg-[#f3f4f6] dark:bg-[#2a3a4c] text-[#131022] dark:text-white hover:bg-[#e5e7eb] dark:hover:bg-[#3a4a5c]'
+    <section id="tariffs" className="py-20 md:py-28">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <ScrollReveal variant="up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Тарифы
+          </h2>
+          <p className="text-[#94a3b8] mb-16 max-w-xl">
+            Выберите подходящий вариант для вашего бизнеса
+          </p>
+        </ScrollReveal>
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          {tariffs.map((tariff, idx) => (
+            <ScrollReveal key={idx} variant="up" delay={idx * 100}>
+            <div
+              className={`rounded-2xl border bg-[#1e293b]/80 p-6 md:p-8 transition-all duration-300 hover-lift hover:scale-[1.02] ${
+                tariff.popular ? 'border-[#7177f8] md:-translate-y-2' : 'border-[#334155]'
               }`}
             >
-              Выбрать тариф
-            </a>
-          </div>
-        ))}
+              {tariff.popular && (
+                <div className="rounded-lg border border-[#7177f8] bg-[#7177f8]/10 text-[#7177f8] text-xs font-bold px-3 py-1.5 inline-block mb-5">
+                  Популярный
+                </div>
+              )}
+              <h3 className="text-xl font-bold text-white mb-2">{tariff.name}</h3>
+              <p className="text-[#94a3b8] mb-5 text-sm">{tariff.description}</p>
+              <div className="mb-6">
+                <span className="text-3xl font-bold text-white">{tariff.price}</span>
+                {tariff.period && <span className="text-[#94a3b8] ml-2">{tariff.period}</span>}
+              </div>
+              <ul className="space-y-3 mb-8">
+                {tariff.features.map((feature, fIdx) => (
+                  <li key={fIdx} className="flex items-start gap-3">
+                    <CheckIcon className="w-5 h-5 text-[#7177f8] shrink-0 mt-0.5" />
+                    <span className="text-sm text-[#94a3b8]">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="http://admin.your-proff-manager.ru"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`block w-full text-center font-bold py-4 px-6 rounded-xl transition-all ${
+                  tariff.popular
+                    ? 'bg-[#7177f8] text-white hover:bg-[#6369e6] animate-attention-pulse'
+                    : 'border-2 border-[#334155] text-white hover:border-[#7177f8] hover:text-[#7177f8]'
+                }`}
+              >
+                Связаться с нами
+              </a>
+            </div>
+            </ScrollReveal>
+          ))}
+        </div>
       </div>
     </section>
   );

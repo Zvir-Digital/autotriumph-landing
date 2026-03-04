@@ -89,7 +89,7 @@ export default function DocsPage() {
             API Документация
           </h1>
           <p className="text-lg text-[#585c7b] dark:text-[#a0a0a0] mb-12 animate-fade-in-up" style={{ animationDelay: '0.1s', opacity: 0 }}>
-            Полное описание REST API для работы с платформой AutoTriumph
+            Полное описание REST API для работы с платформой Аметаверс
           </p>
 
           {/* Base URL */}

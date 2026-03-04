@@ -4,19 +4,19 @@ export default function Footer() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">AutoTriumph</h3>
+            <h3 className="text-2xl font-bold mb-4">Аметаверс</h3>
             <p className="text-white/70 text-sm leading-relaxed">
-              Платформа для автоматизации аренды автомобилей через умных чат-ботов. 
-              Увеличьте продажи и сократите затраты на обслуживание клиентов.
+              Операционная платформа для бизнеса. Единое окно для всех коммуникаций, заявок и продаж — 
+              от первого обращения до договора, оплаты и сопровождения.
             </p>
           </div>
           <div>
             <h4 className="font-bold mb-4">Возможности</h4>
             <ul className="space-y-2 text-sm text-white/70">
-              <li><a href="#features" className="hover:text-white transition-colors">AI диалоги</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Множество каналов</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Интеграция платежей</a></li>
-              <li><a href="#features" className="hover:text-white transition-colors">Аналитика</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Чат-боты и AI</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Продажи и договоры</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Техподдержка</a></li>
+              <li><a href="#features" className="hover:text-white transition-colors">Маркетплейсы</a></li>
             </ul>
           </div>
           <div>
@@ -46,7 +46,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/60">
-          <p>© 2025 AutoTriumph. Все права защищены.</p>
+          <p>© 2025 Аметаверс. Все права защищены.</p>
         </div>
       </div>
     </footer>

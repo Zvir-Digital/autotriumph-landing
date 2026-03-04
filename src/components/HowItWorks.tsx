@@ -1,93 +1,59 @@
 'use client';
 
-import { MessageIcon, BotIcon, RouteIcon, CheckIcon } from './icons';
-import Lottie from 'lottie-react';
+import { ChannelsIcon, BotIcon, DocumentIcon, CheckIcon } from './icons';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import { processAnimation } from './animations/animations';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import ScrollReveal from './ScrollReveal';
+
+const steps = [
+  { step: '01', icon: ChannelsIcon, title: 'Подключите каналы', description: 'Почта, мессенджеры, сайт, CRM, маркетплейсы — все входящие сообщения и заявки в одном окне' },
+  { step: '02', icon: BotIcon, title: 'Настройте ботов и AI', description: 'Чат-боты под поддержку, продажи или сбор заявок. Загрузите ядро, подключите сценарии' },
+  { step: '03', icon: DocumentIcon, title: 'Автоматизируйте документы', description: 'Шаблоны договоров, заполнение, реквизиты, счета и контроль оплаты' },
+  { step: '04', icon: CheckIcon, title: 'Управляйте процессами', description: 'Очередь работ с приоритетами. Единая картина от первого обращения до результата' },
+];
 
 export default function HowItWorks() {
-  const steps = [
-    {
-      step: '01',
-      icon: MessageIcon,
-      title: 'Клиент пишет в мессенджер',
-      description: 'WhatsApp, Telegram или Email — не важно, бот отвечает везде одинаково хорошо',
-    },
-    {
-      step: '02',
-      icon: BotIcon,
-      title: 'AI ведет диалог',
-      description: 'Извлекает имя, телефон, дату, маршрут и количество гостей естественным образом',
-    },
-    {
-      step: '03',
-      icon: RouteIcon,
-      title: 'Автоматический расчет',
-      description: 'Система считает расстояние, подбирает автомобили и рассчитывает стоимость',
-    },
-    {
-      step: '04',
-      icon: CheckIcon,
-      title: 'Оплата и подтверждение',
-      description: 'Клиент оплачивает предоплату через YooKassa, заказ автоматически создается',
-    },
-  ];
+  const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section id="how-it-works" className="bg-gradient-to-br from-[#f3f4f6] to-[#e5e7eb] dark:from-[#1a2332] dark:to-[#16212b] py-12 sm:py-16 md:py-20">
+    <section ref={ref} id="how-it-works" className="py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#131022] dark:text-white text-center mb-10 sm:mb-12 md:mb-16 px-4">
-          Как это работает
-        </h2>
-        
-        {/* Центральная анимация с роботом и чатом */}
-        <div className="flex justify-center mb-10 sm:mb-12 md:mb-16">
-          <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl h-[250px] sm:h-[300px] md:h-[350px]">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <DotLottieReact
-                src="/animations/robot_chat.json"
-                loop
-                autoplay
-                style={{ width: '100%', height: '100%', maxWidth: '100%', maxHeight: '100%' }}
-              />
-            </div>
-          </div>
-        </div>
+        <ScrollReveal variant="up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+            Как это работает
+          </h2>
+          <p className="text-[#94a3b8] mb-16 max-w-xl">
+            Четыре шага к единому окну управления
+          </p>
+        </ScrollReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <ScrollReveal variant="scale" delay={100} className="flex justify-center mb-16">
+          <div className="relative w-full max-w-lg h-[220px] md:h-[280px]">
+            <DotLottieReact
+              src="/animations/robot_chat.json"
+              loop
+              autoplay
+              style={{ width: '100%', height: '100%' }}
+            />
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {steps.map((item, idx) => {
             const IconComponent = item.icon;
             return (
-              <div
-                key={idx}
-                className="bg-[#23303c] p-6 sm:p-8 rounded-2xl border border-[#3a4a5c] hover:shadow-xl transition-all relative overflow-hidden"
-              >
-                {/* Анимация процесса */}
-                {idx < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-4 w-8 h-8 opacity-30 -translate-y-1/2 z-0">
-                    <Lottie
-                      animationData={processAnimation}
-                      loop={true}
-                      autoplay={true}
-                      style={{ width: '100%', height: '100%' }}
-                    />
+              <ScrollReveal key={idx} variant="up" delay={idx * 80}>
+                <div className="rounded-2xl border border-[#334155] bg-[#1e293b]/80 p-6 md:p-8 hover:border-[#7177f8]/50 transition-all duration-300 hover-lift hover:scale-[1.02]">
+                  <div className="flex items-start gap-5 mb-4">
+                    <span className="text-2xl font-bold text-[#7177f8] tabular-nums">{item.step}</span>
+                    <div className="rounded-lg border border-[#334155] p-2">
+                      <IconComponent className="w-6 h-6 text-[#7177f8]" />
+                    </div>
                   </div>
-                )}
-                <div className="flex items-start gap-4 mb-4 relative z-10">
-                  <div className="bg-gradient-to-br from-[#6366f1] to-[#7177f8] text-white font-bold text-2xl sm:text-3xl px-6 py-4 rounded-xl shrink-0 w-20 h-20 flex items-center justify-center">
-                    {item.step}
-                  </div>
-                  <div className="text-[#6366f1] dark:text-[#7177f8] pt-2">
-                    <IconComponent className="w-8 h-8" />
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                  <p className="text-sm text-[#94a3b8] leading-relaxed">{item.description}</p>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#131022] dark:text-white mb-3 relative z-10">
-                  {item.title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#585c7b] dark:text-[#a0a0a0] leading-relaxed relative z-10">
-                  {item.description}
-                </p>
-              </div>
+              </ScrollReveal>
             );
           })}
         </div>

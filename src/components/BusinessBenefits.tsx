@@ -1,59 +1,43 @@
 'use client';
 
 import { LightningIcon, TargetIcon, RocketIcon } from './icons';
+import { useIntersectionObserver } from '@/hooks/useIntersectionObserver';
+import ScrollReveal from './ScrollReveal';
+
+const benefits = [
+  { icon: LightningIcon, title: 'Порядок вместо хаоса', description: 'Исчезает путаница кабинетов и переписок — единая картина с понятными статусами', stat: '1 окно' },
+  { icon: TargetIcon, title: 'Предсказуемый результат', description: 'Процессы понятны, масштабируемы — от первого касания до оплаты', stat: 'Система' },
+  { icon: RocketIcon, title: 'Масштаб без роста штата', description: 'Поток растёт, качество сохраняется за счёт автоматизации и ботов', stat: 'Рост' },
+];
 
 export default function BusinessBenefits() {
-  const benefits = [
-    {
-      icon: LightningIcon,
-      title: 'Экономия времени',
-      description: 'Автоматизация обработки заказов экономит до 80% времени менеджеров',
-      stat: '80%',
-    },
-    {
-      icon: TargetIcon,
-      title: 'Увеличение конверсии',
-      description: 'Круглосуточная доступность и мгновенные ответы повышают конверсию на 40%',
-      stat: '+40%',
-    },
-    {
-      icon: RocketIcon,
-      title: 'Рост продаж',
-      description: 'Автоматизация позволяет обрабатывать в 5 раз больше заказов без увеличения штата',
-      stat: '5x',
-    },
-  ];
+  const { ref, isIntersecting } = useIntersectionObserver();
 
   return (
-    <section className="bg-gradient-to-br from-[#6366f1] to-[#7177f8] py-12 sm:py-16 md:py-20">
+    <section ref={ref} className="py-20 md:py-28">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-4 px-4">
-          Как это улучшит ваш бизнес
-        </h2>
-        <p className="text-center text-white/90 mb-10 sm:mb-12 md:mb-16 text-lg max-w-2xl mx-auto">
-          Реальные результаты от внедрения платформы AutoTriumph
-        </p>
-        <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <ScrollReveal variant="up">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            Что даёт Аметаверс
+          </h2>
+          <p className="text-[#94a3b8] mb-16 max-w-xl">
+            Единый пульт управления бизнесом для ИП, самозанятых и менеджеров
+          </p>
+        </ScrollReveal>
+        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {benefits.map((benefit, idx) => {
             const IconComponent = benefit.icon;
             return (
-              <div
-                key={idx}
-                className="bg-[#23303c] p-6 sm:p-8 rounded-2xl shadow-xl relative overflow-hidden"
-              >
-                <div className="bg-[#6366f1] dark:bg-[#7177f8] w-16 h-16 rounded-xl flex items-center justify-center mb-4 relative z-10">
-                  <IconComponent className="w-8 h-8 text-white" />
+              <ScrollReveal key={idx} variant="up" delay={idx * 80}>
+              <div className="rounded-2xl border border-[#334155] bg-[#1e293b]/90 p-6 md:p-8 hover:border-[#7177f8]/50 transition-all duration-300 hover-lift hover:scale-[1.02]">
+                <div className="rounded-xl border border-[#7177f8]/50 w-14 h-14 flex items-center justify-center mb-5">
+                  <IconComponent className="w-7 h-7 text-[#7177f8]" />
                 </div>
-                <div className="text-4xl font-bold text-[#6366f1] dark:text-[#7177f8] mb-2 relative z-10">
-                  {benefit.stat}
-                </div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#131022] dark:text-white mb-3 relative z-10">
-                  {benefit.title}
-                </h3>
-                <p className="text-sm sm:text-base text-[#585c7b] dark:text-[#a0a0a0] leading-relaxed relative z-10">
-                  {benefit.description}
-                </p>
+                <div className="text-3xl font-bold text-[#7177f8] mb-2">{benefit.stat}</div>
+                <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                <p className="text-sm text-[#94a3b8] leading-relaxed">{benefit.description}</p>
               </div>
+              </ScrollReveal>
             );
           })}
         </div>

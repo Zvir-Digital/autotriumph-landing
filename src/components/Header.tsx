@@ -61,20 +61,20 @@ export default function Header() {
 
   return (
     <>
-      <header 
+    <header 
         className={`sticky top-0 z-50 bg-[#16212b] border-b-2 border-[#3a4a5c] shadow-sm transition-transform duration-300 ${
-          isScrolled ? '-translate-y-full' : 'translate-y-0'
-        }`}
-      >
-        <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
+        isScrolled ? '-translate-y-full' : 'translate-y-0'
+      }`}
+    >
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 md:h-20">
             <a 
               href="/" 
               onClick={handleLogoClick}
               className="text-2xl md:text-3xl font-bold text-[#131022] dark:text-white hover:opacity-80 transition-opacity"
             >
-              AutoTriumph
-            </a>
+            Аметаверс
+          </a>
           <div className="hidden sm:flex items-center gap-4 md:gap-6">
             <a
               href="#features"
@@ -125,9 +125,9 @@ export default function Header() {
         </div>
       </nav>
     </header>
-
+      
     {/* Mobile Menu Drawer - вынесен за пределы header для правильного позиционирования */}
-    {isMenuOpen && (
+      {isMenuOpen && (
       <>
         {/* Backdrop */}
         <div 
@@ -157,7 +157,7 @@ export default function Header() {
                 }}
                 className="text-2xl font-bold text-[#131022] dark:text-white hover:opacity-80 transition-opacity"
               >
-                AutoTriumph
+                Аметаверс
               </a>
               <button
                 onClick={handleCloseMenu}
@@ -169,50 +169,50 @@ export default function Header() {
             </div>
             
             <div className="flex flex-col space-y-1 flex-1 overflow-y-auto">
-              <a
-                href="#features"
+            <a
+              href="#features"
                 className="text-lg text-[#131022] dark:text-white font-medium py-3 px-4 rounded-lg hover:bg-[#f3f4f6] dark:hover:bg-[#23303c] transition-colors"
                 onClick={handleCloseMenu}
-              >
-                Возможности
-              </a>
-              <a
-                href="#how-it-works"
+            >
+              Возможности
+            </a>
+            <a
+              href="#how-it-works"
                 className="text-lg text-[#131022] dark:text-white font-medium py-3 px-4 rounded-lg hover:bg-[#f3f4f6] dark:hover:bg-[#23303c] transition-colors"
                 onClick={handleCloseMenu}
-              >
+            >
                 Как это работает
-              </a>
-              <a
-                href="#tariffs"
+            </a>
+            <a
+              href="#tariffs"
                 className="text-lg text-[#131022] dark:text-white font-medium py-3 px-4 rounded-lg hover:bg-[#f3f4f6] dark:hover:bg-[#23303c] transition-colors"
                 onClick={handleCloseMenu}
-              >
-                Тарифы
-              </a>
-              <a
-                href="/docs"
+            >
+              Тарифы
+            </a>
+            <a
+              href="/docs"
                 className="text-lg text-[#131022] dark:text-white font-medium py-3 px-4 rounded-lg hover:bg-[#f3f4f6] dark:hover:bg-[#23303c] transition-colors"
                 onClick={handleCloseMenu}
-              >
-                Документация
-              </a>
+            >
+              Документация
+            </a>
             </div>
             <div className="mt-auto pt-4 border-t border-[#e2e5f1] dark:border-[#3a4a5c]">
-              <a
-                href="http://admin.your-proff-manager.ru"
+            <a
+              href="http://admin.your-proff-manager.ru"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block w-full bg-[#6366f1] dark:bg-[#7177f8] text-white font-bold py-3 px-6 rounded-xl text-center hover:bg-[#5855eb] dark:hover:bg-[#6369e6] transition-colors"
                 onClick={handleCloseMenu}
-              >
-                Войти
-              </a>
-            </div>
+            >
+              Войти
+            </a>
           </div>
         </div>
+        </div>
       </>
-    )}
+      )}
     </>
   );
 }
